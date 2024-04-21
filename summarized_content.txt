@@ -1,0 +1,13 @@
+ The file system and Database Management System (DBMS) are two distinct methods of organizing and managing data. A file system is a way of arranging files in a storage medium, such as a hard disk, and performing basic operations like management of file names and access rules. It uses a hierarchical structure of directories and sub-directories for organizing files but lacks advanced capabilities for managing complex data relationships or ensuring data consistency.
+
+On the other hand, DBMS is software designed to manage large amounts of structured data with advanced features for storing, retrieving, and manipulating data. It offers a centralized and organized way of storing data that can be accessed and modified by multiple users or applications simultaneously. DBMS ensures data consistency, accuracy, and integrity through data validation, indexing, transactions, concurrency control, and backup and recovery mechanisms. The key differences between the two include:
+
+* Data organization: File systems use a hierarchical structure, while DBMS uses a relational model.
+* Data redundancy: File systems may contain redundant data, while DBMS eliminates it.
+* Backup and recovery: File systems lack built-in mechanisms for backup and recovery, while DBMS provides tools for these functions.
+* Complexity: File systems are less complex than DBMS.
+* Security: File systems offer less security than DBMS.
+* Cost: File systems are less expensive than DBMS.
+* Data independence: File systems do not support data independence, while DBMS offers both logical and physical data independence.
+
+File systems are suitable for managing small amounts of unstructured data, while DBMS is designed for large, complex, and structured data with advanced features for ensuring data integrity, security, and performance.

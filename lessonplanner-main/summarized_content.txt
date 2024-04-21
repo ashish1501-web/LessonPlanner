@@ -1,0 +1,23 @@
+ Process management is an essential part of any operating system, responsible for managing the execution of processes or programs within the system. It involves several components and mechanisms to ensure efficient utilization of system resources, fair distribution of CPU time, and communication between different processes.
+
+In process management, a process refers to an instance of a program that is currently being executed by the operating system. A process consists of a program in execution (code segment), data segment for storing the current values of data used by the program, stack space for local variables, and various other system-specific details like the Process ID (PID), Processor Status, and Process State.
+
+Process states and transitions include:
+
+1. New (created): A process is born when a new process is spawned or initiated.
+2. Ready (to be executed): The process is waiting for the CPU to get allocated for execution.
+3. Running: The process currently has control over the CPU and executing the instructions.
+4. Waiting: The process is waiting for some event or resource before it can continue its execution (like I/O).
+5. Terminated: The process completes its execution and gets removed from the system.
+
+In a UNIX system, process control is handled using signals, which are asynchronous notifications sent by one process to another. When a signal is received, the receiving process changes its behavior based on the signal type. Commonly used signals include SIGINT (Keyboard Interrupt), SIGTERM (Termination signal), and SIGHUP (Hang-up or background).
+
+Process management involves several components:
+
+1. Process Control Block (PCB): A data structure that contains the state information of a process, including its program counter (PC), stack pointer, base register, status flags, etc.
+2. Process Table: An array maintained by the kernel containing the control block for every currently executing or waiting process in the system.
+3. Process Scheduler: A component responsible for managing the CPU allocation to various processes, and maintaining a queue (Run Queue) of available processes.
+4. Inter-Process Communication (IPC): A mechanism allowing different processes to interact with each other by exchanging data through shared memory or message passing.
+5. Process synchronization: Ensuring proper ordering and execution of concurrent processes by using locks, semaphores, or mutexes.
+
+To summarize, process management is responsible for managing the execution of programs in a system, ensuring fair resource allocation, efficient utilization of CPU, and enabling communication between different processes.

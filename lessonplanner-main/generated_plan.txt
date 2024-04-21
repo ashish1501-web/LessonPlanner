@@ -1,0 +1,54 @@
+ Topic 1: Introduction to DBMS and its components
+
+* Database management systems (DBMS) concepts
+* Database vs. filesystem
+* Relational model vs. object-oriented model
+* Advantages and disadvantages of using DBMS
+
+Topic 1 (advanced): Database architecture
+
+* Client-server architecture
+* Multi-tier architecture
+* Database clusters
+* Distributed databases
+
+Topic 2: Database Design
+
+* Entity relationship modeling
+* Data flow diagrams
+* Normalization techniques
+* Database schema design
+
+Topic 2 (advanced): Advanced database design concepts
+
+* Object-oriented database design
+* Data modeling with UML
+* NoSQL databases
+* Data warehouses and data mining
+
+Topic 3: Querying a DBMS
+
+* SQL syntax for selecting, inserting, updating, and deleting data
+* Subqueries, joins, unions, and set operators
+* Indexes, transactions, and rollbacks
+
+Topic 3 (advanced): Advanced querying concepts
+
+* Stored procedures and user-defined functions
+* Views and materialized views
+* Optimizing SQL queries with explain plans
+* NoSQL query languages like MongoDB Query Language (MQL) or Cassandra Query Language (CQL)
+
+Topic 4: Database Security
+
+* Access control models, including RBAC and ABAC
+* Encryption techniques for data at rest and in transit
+* SQL injection attacks and prevention strategies
+* Database auditing and monitoring
+
+Topic 4 (advanced): Advanced database security concepts
+
+* Securing NoSQL databases
+* Threat modeling for DBMS architectures
+* Authentication, authorization, and encryption in cloud databases
+* Advanced security techniques like VPNs and firewalls for remote access to databases.
