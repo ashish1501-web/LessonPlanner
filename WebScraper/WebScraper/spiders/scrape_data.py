@@ -1,13 +1,22 @@
 import scrapy
+import streamlit as st
 from scrapy.selector import Selector
+import asyncio
 import sys
 sys.path.append(r'C:/Users/aharakun/Downloads/lessonplanner-main/WebScraper/WebScraper')
 import fetch_url
 from fetch_url import fetch_links
+import sys
+sys.path.append(r'C:/Users/aharakun/Downloads/lessonplanner-main/WebScraper/WebScraper/spiders')
+from get_topic import get_topic_to_scrape
 
 class TitleSpider(scrapy.Spider):
     name = 'LessonPlanner'
-    start_urls = fetch_links()
+    topic = input("Enter the Topic")
+    # topic=get_topic_to_scrape()
+    print(topic)
+    print("222222222222222222222222222222222222222222222")
+    start_urls = asyncio.run(fetch_links(topic))
     for i in start_urls:
         print(i)
     

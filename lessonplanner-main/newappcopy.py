@@ -24,14 +24,12 @@ def main():
                        initial_sidebar_state='expanded')
 
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["Generate Plan", "View Plan","Summarize content"])
+    page = st.sidebar.radio("Go to", ["Generate Plan", "View Plan","Summarized content"])
 
     if page == "Generate Plan":
         generate_plan()
     elif page == "View Plan":
         generated_plan()
-    elif page=="Summarize content":
-        summarize_content()
 
 # Function for generating plan
 def save_response_to_file(response):
@@ -60,25 +58,18 @@ def generate_plan():
         save_response_to_file(response)
         # st.experimental_rerun()
 
-import sys
-sys.path.append(r'C:/Users/aharakun/Downloads/lessonplanner-main/WebScraper/WebScraper/spiders')
-import get_topic
-
 def summarize_content():
-    st.title("Summarize content 🖥️")
-    submit = st.button("Give topic")
+    st.title("Generate plan 🖥️")
+
+    input_text = st.text_input("Enter the Topic")
+
+
+    submit = st.button("Summarize")
 
     if submit:
         # response = getPlan(input_text, no_hours, level)
         # st.sidebar.write("## View Plan")
         st.success("yess bro")
-        import os
-        
-        os.system("C:/Users/aharakun/Downloads/lessonplanner-main/a.bat")
-        with open("summarized_content.txt","r") as file:
-            lines=file.readlines()
-            for line in lines:
-                st.success(str(line))
         # st.session_state.generated_response = response
         # save_response_to_file(response)
 

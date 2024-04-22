@@ -1,13 +1,67 @@
- The file system and Database Management System (DBMS) are two distinct methods of organizing and managing data. A file system is a way of arranging files in a storage medium, such as a hard disk, and performing basic operations like management of file names and access rules. It uses a hierarchical structure of directories and sub-directories for organizing files but lacks advanced capabilities for managing complex data relationships or ensuring data consistency.
+ It seems that you are trying to explain how to implement a Singleton design pattern in C++ without using a static getInstance() method. I will provide an explanation of your code and then add some suggestions for improvement.
 
-On the other hand, DBMS is software designed to manage large amounts of structured data with advanced features for storing, retrieving, and manipulating data. It offers a centralized and organized way of storing data that can be accessed and modified by multiple users or applications simultaneously. DBMS ensures data consistency, accuracy, and integrity through data validation, indexing, transactions, concurrency control, and backup and recovery mechanisms. The key differences between the two include:
+First, let's go through the code:
 
-* Data organization: File systems use a hierarchical structure, while DBMS uses a relational model.
-* Data redundancy: File systems may contain redundant data, while DBMS eliminates it.
-* Backup and recovery: File systems lack built-in mechanisms for backup and recovery, while DBMS provides tools for these functions.
-* Complexity: File systems are less complex than DBMS.
-* Security: File systems offer less security than DBMS.
-* Cost: File systems are less expensive than DBMS.
-* Data independence: File systems do not support data independence, while DBMS offers both logical and physical data independence.
+```cpp
+#include<iostream>
+using namespace std;
 
-File systems are suitable for managing small amounts of unstructured data, while DBMS is designed for large, complex, and structured data with advanced features for ensuring data integrity, security, and performance.
+class Singleton {
+private:
+    // member variables
+    string name; loves;
+    // static pointer which points to the instance of this class.
+    static Singleton *instancePtr;
+
+public:
+    Singleton() : name(""), loves("") {}  // Default constructor
+    Singleton(string name, string loves) { this->name = name; this->loves = loves; }
+
+    void setValues(string name, string loves) { this->name = name; this->loves = loves; }
+    void print() { cout << name << " Loves " << loves << "." << endl; }
+
+    static Singleton *getInstance() {
+        if (instancePtr == NULL) { // If there is no instance of class then we can create an instance.
+            instancePtr = new Singleton();
+            return instancePtr;
+        } else { // if instancePtr != NULL that means the class already has an instance.
+            // So we are returning that instance and not creating a new one.
+            return instancePtr;
+        }
+    }
+};
+
+// initializing instancePtr with NULL
+Singleton *Singleton ::instancePtr = NULL;
+
+int main() {
+    // Gives error: Cannot create object of Singleton class as default constructor is private & no method is used to access it.
+    return 0;
+}
+```
+
+In the provided code, you have defined a `Singleton` class that follows these rules:
+
+1. The class has only one instance during its lifetime.
+2. The class provides a global point of access to its instance.
+3. The class's constructor(s) are private or inaccessible, so that clients cannot create objects directly.
+
+You have defined `Singleton` with the following properties:
+
+1. Private member variables `name` and `loves`.
+2. A static member pointer `instancePtr`, which will point to the singleton instance when it's created.
+3. A default constructor that initializes both private members to empty strings.
+4. A constructor that sets the values of the private members.
+5. Public methods for setting and printing the values of private members.
+6. A static method `getInstance()` that returns a pointer to the singleton instance if it's not created yet or returns the existing instance otherwise.
+7. The `instancePtr` is initialized with NULL.
+
+However, in your code, you are trying to create an object of the Singleton class directly, which will fail as the default constructor is private, and no other constructor or method can be used to access it or create an object. Instead, one should use the `getInstance()` method to get a pointer to the singleton instance.
+
+Now, let's add some suggestions for improvement:
+
+1. Make the private members `name` and `loves` constants by adding the keyword `const`. This way, once they are initialized in the constructor, their values will not be changed again.
+2. In the default constructor, you can initialize both private members to empty strings directly by using the initializer list syntax like this: `Singleton() : name(""), loves("") {}`
+3. Instead of returning a pointer to the Singleton instance in the getInstance() method, you can consider making it a static member variable of the class itself and accessing it directly with its class name as follows: `Singleton& getInstance() { return *instancePtr; }` This way, clients will have access to the singleton instance's public members directly.
+4. You should also consider adding a private destructor to prevent the Singleton instance from being deleted or destroyed accidentally.
+5. Lastly, instead of using raw pointers for managing the singleton instance, you can also use smart pointers such as `unique_ptr` or `shared_ptr`. This will help you with memory management and also provide additional benefits like easier debugging.

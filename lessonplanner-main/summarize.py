@@ -3,7 +3,7 @@ from ollama import chat
 
 # Function to get response from LLama 2 model
 input_text=""
-with open("C:/Users/aharakun/Downloads/lessonplanner-main/WebScraper/result_from_geeks_for_geeks.txt","r") as file:
+with open("C:/Users/aharakun/Downloads/lessonplanner-main/WebScraper/WebScraper/result_from_geeks_for_geeks.txt","r") as file:
     lines=file.readlines()
     for line in lines:
         line=line.strip()
@@ -19,5 +19,6 @@ def get_LLama_response(input_text):
     return response['message']['content']
 summarized_content=get_LLama_response(input_text)
 print(summarized_content)
-with open("C:/Users/aharakun/Downloads/lessonplanner-main/summarized_content.txt","w",encoding='utf-8') as file:
+
+with open("C:/Users/aharakun/Downloads/lessonplanner-main/lessonplanner-main/summarized_content.txt","w",encoding='utf-8') as file:
     file.write(summarized_content)

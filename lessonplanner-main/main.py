@@ -59,7 +59,10 @@ def main():
         display_response(st.session_state.response)
 
 # Function to display response page with table
-
+import sys
+sys.path.append(r'C:/Users/aharakun/Downloads/lessonplanner-main/WebScraper/WebScraper')
+import fetch_url
+from fetch_url import fetch_links
 
 def display_response(response):
     st.header("Generated Plan")
@@ -70,8 +73,10 @@ def display_response(response):
         topic = topic.strip().replace("*", "")
         if topic.strip():
             # Dummy link for now
+            link=fetch_links(topic.strip())
             data.append({"Topic": topic.strip(),
-                        "Website Link": "https://example.com"})
+                        "GFG Link": link[0],
+                        "Javatpoint Link": link[1]})
     st.table(data)
     return response  # Return the response instead of displaying it directly
 

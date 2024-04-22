@@ -1,54 +1,23 @@
- Topic 1: Introduction to DBMS and its components
+ Topic 1: Introduction to Operating Systems (OS) and their roles in computer systems
 
-* Database management systems (DBMS) concepts
-* Database vs. filesystem
-* Relational model vs. object-oriented model
-* Advantages and disadvantages of using DBMS
+* Subtopic 1: Definition, functions, and types of operating systems
+* Subtopic 2: Comparison between different types of OS: Batch processing, Time-sharing, Multiprogramming, Multitasking, Real-time, Distributed, and Networked OS
+* Subtopic 3: Key features and components of an OS (memory management, process management, input/output management, file management, and user interface)
 
-Topic 1 (advanced): Database architecture
+Topic 2: File Systems in Operating Systems
 
-* Client-server architecture
-* Multi-tier architecture
-* Database clusters
-* Distributed databases
+* Subtopic 1: Understanding the concept of a file system and its role in organizing data in a computer
+* Subtopic 2: Types of file systems: FAT (File Allocation Table), NTFS (New Technology File System), HFS+, etc.
+* Subtopic 3: File access methods: Sequential access, Direct access, Indexed sequential access, and Random access
 
-Topic 2: Database Design
+Topic 3: Process Management in Operating Systems
 
-* Entity relationship modeling
-* Data flow diagrams
-* Normalization techniques
-* Database schema design
+* Subtopic 1: Definition, concepts, and functions of process management
+* Subtopic 2: Process states: New, Ready, Running, Waiting, Suspended, Terminated
+* Subtopic 3: Scheduling algorithms (First-Come-First-Served, Shortest Job Next, Priority Scheduling, Round Robin) and their comparison.
 
-Topic 2 (advanced): Advanced database design concepts
+Topic 4: Memory Management in Operating Systems
 
-* Object-oriented database design
-* Data modeling with UML
-* NoSQL databases
-* Data warehouses and data mining
-
-Topic 3: Querying a DBMS
-
-* SQL syntax for selecting, inserting, updating, and deleting data
-* Subqueries, joins, unions, and set operators
-* Indexes, transactions, and rollbacks
-
-Topic 3 (advanced): Advanced querying concepts
-
-* Stored procedures and user-defined functions
-* Views and materialized views
-* Optimizing SQL queries with explain plans
-* NoSQL query languages like MongoDB Query Language (MQL) or Cassandra Query Language (CQL)
-
-Topic 4: Database Security
-
-* Access control models, including RBAC and ABAC
-* Encryption techniques for data at rest and in transit
-* SQL injection attacks and prevention strategies
-* Database auditing and monitoring
-
-Topic 4 (advanced): Advanced database security concepts
-
-* Securing NoSQL databases
-* Threat modeling for DBMS architectures
-* Authentication, authorization, and encryption in cloud databases
-* Advanced security techniques like VPNs and firewalls for remote access to databases.
+* Subtopic 1: Overview of memory management and its importance
+* Subtopic 2: Virtual memory, paging, and segmentation techniques
+* Subtopic 3: Memory allocation algorithms: First-Fit, Best-Fit, Worst-Fit, Buddy System, and Completely Fair Scheduler.

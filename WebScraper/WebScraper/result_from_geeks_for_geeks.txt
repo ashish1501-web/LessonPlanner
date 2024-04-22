@@ -1,8 +1,8 @@
-Python Tuples
+Implementation of Singleton Class in C++
                                         
                                                                                     
                                                 Last Updated : 
-                                                08 Apr 2024
+                                                08 Nov 2022
                                             
                                                                             
                                                                 
@@ -77,204 +77,484 @@ Python Tuples
                                         
                                     
                             
-                                                                Python Tuple is a collection of Python Programming objects much like a list. The sequence of values stored in a tuple can be of any type and they are indexed by integers.  Values of a tuple are syntactically separated by ‘commas‘. Although it is not necessary it is more common to define a tuple by closing the sequence of values in parentheses. This helps in understanding the Python tuples more easily.
+                                                                A singleton class is a special type of class in object-oriented programming which can have only one object or instance at a time. In other words we can instantiate only one instance of the singleton class. The new variable also points to the initial instance created if we attempt to instantiate the Singleton class after the first time. This is implemented by using the core concepts of object-oriented programming namely access modifiers constructors & static methods.  
+Steps to Implement Singleton Class in C++:
 
-Creating a TupleIn Python Programming tuples are created by placing a sequence of values separated by ‘comma’ with or without the use of parentheses for grouping the data sequence.
+Make all the constructors of the class private.
+Delete the copy constructor of the class.
+Make a private static pointer that can point to the same class object (singleton class).
+Make a public static method that returns the pointer to the same class object (singleton class).
 
-Note: Creation of Python tuple without the use of parentheses is known as Tuple Packing.  
+Below is the implementation of the singleton class in C++:
 
-Python Program to Demonstrate the Addition of Elements in a Tuple.
-            Python3
-
-    # Creating an empty Tuple
-Tuple1 = ()
-print("Initial empty Tuple: ")
-print(Tuple1)
-
-# Creating a Tuple
-# with the use of string
-Tuple1 = (Geeks For)
-print("\nTuple with the use of String: ")
-print(Tuple1)
-
-# Creating a Tuple with
-# the use of list
-list1 = 1 2 4 5 6
-print("\nTuple using List: ")
-print(tuple(list1))
-
-# Creating a Tuple
-# with the use of built-in function
-Tuple1 = tuple(Geeks)
-print("\nTuple with the use of function: ")
-print(Tuple1)
-
-Output: 
-
-Initial empty Tuple: ()Tuple with the use of String: (Geeks For)Tuple using List: (1 2 4 5 6)Tuple with the use of function: (G e e k s) Creating a Tuple with Mixed Datatypes.Python Tuples can contain any number of elements and of any datatype (like strings integers list etc.). Tuples can also be created with a single element but it is a bit tricky. Having one element in the parentheses is not sufficient there must be a trailing ‘comma’ to make it a tuple. 
-
-
-            Python3
-
-    # Creating a Tuple
-# with Mixed Datatype
-Tuple1 = (5 Welcome 7 Geeks)
-print("\nTuple with Mixed Datatypes: ")
-print(Tuple1)
-
-# Creating a Tuple
-# with nested tuples
-Tuple1 = (0 1 2 3)
-Tuple2 = (python geek)
-Tuple3 = (Tuple1 Tuple2)
-print("\nTuple with nested tuples: ")
-print(Tuple3)
-
-# Creating a Tuple
-# with repetition
-Tuple1 = (Geeks) * 3
-print("\nTuple with repetition: ")
-print(Tuple1)
-
-# Creating a Tuple
-# with the use of loop
-Tuple1 = (Geeks)
-n = 5
-print("\nTuple with a loop")
-for i in range(int(n)):
-    Tuple1 = (Tuple1)
-    print(Tuple1)
-
-Output: 
-
-Tuple with Mixed Datatypes: (5 Welcome 7 Geeks)Tuple with nested tuples: ((0 1 2 3) (python geek))Tuple with repetition: (Geeks Geeks Geeks)Tuple with a loop(Geeks)((Geeks))(((Geeks)))((((Geeks))))(((((Geeks)))))Time complexity: O(1)Auxiliary Space : O(n)
-
-Python Tuple OperationsHere below are the Python tuple operations.
-
-Accessing of Python TuplesConcatenation of TuplesSlicing of TupleDeleting a TupleAccessing of TuplesIn Python Programming Tuples are immutable and usually they contain a sequence of heterogeneous elements that are accessed via unpacking or indexing (or even by attribute in the case of named tuples). Lists are mutable and their elements are usually homogeneous and are accessed by iterating over the list.
-
-Note: In unpacking of tuple number of variables on the left-hand side should be equal to a number of values in given tuple a. 
-
-
-            Python3
-
-    # Accessing Tuple
-# with Indexing
-Tuple1 = tuple("Geeks")
-print("\nFirst element of Tuple: ")
-print(Tuple10)
-
-
-# Tuple unpacking
-Tuple1 = ("Geeks" "For" "Geeks")
-
-# This line unpack
-# values of Tuple1
-a b c = Tuple1
-print("\nValues after unpacking: ")
-print(a)
-print(b)
-print(c)
-
-Output: 
-
-First element of Tuple: GValues after unpacking: GeeksForGeeksTime complexity: O(1)Space complexity: O(1)
-
-Concatenation of TuplesConcatenation of tuple is the process of joining two or more Tuples. Concatenation is done by the use of ‘+’ operator. Concatenation of tuples is done always from the end of the original tuple. Other arithmetic operations do not apply on Tuples. 
-
-Note- Only the same datatypes can be combined with concatenation an error arises if a list and a tuple are combined. 
+C++
 
 
 
 
-            Python3
 
-    # Concatenation of tuples
-Tuple1 = (0 1 2 3)
-Tuple2 = (Geeks For Geeks)
 
-Tuple3 = Tuple1 + Tuple2
 
-# Printing first Tuple
-print("Tuple 1: ")
-print(Tuple1)
+                                    
 
-# Printing Second Tuple
-print("\nTuple2: ")
-print(Tuple2)
+                                    
+                                    
 
-# Printing Final Tuple
-print("\nTuples after Concatenation: ")
-print(Tuple3)
+                                    
 
-Output: 
-
-Tuple 1: (0 1 2 3)Tuple2: (Geeks For Geeks)Tuples after Concatenation: (0 1 2 3 Geeks For Geeks)Time Complexity: O(1)Auxiliary Space: O(1)
-
-Slicing of TupleSlicing of a Tuple is done to fetch a specific range or slice of sub-elements from a Tuple. Slicing can also be done to lists and arrays. Indexing in a list results to fetching a single element whereas Slicing allows to fetch a set of elements. 
-
-Note- Negative Increment values can also be used to reverse the sequence of Tuples. 
+                                    
+                                    
+                                    
+                                
 
 
 
 
-            Python3
-
-    # Slicing of a Tuple
-
-# Slicing of a Tuple
-# with Numbers
-Tuple1 = tuple(GEEKSFORGEEKS)
-
-# Removing First element
-print("Removal of First Element: ")
-print(Tuple11:)
-
-# Reversing the Tuple
-print("\nTuple after sequence of Element is reversed: ")
-print(Tuple1::-1)
-
-# Printing elements of a Range
-print("\nPrinting elements between Range 4-9: ")
-print(Tuple14:9)
-
-Output: 
-
-Removal of First Element: (E E K S F O R G E E K S)Tuple after sequence of Element is reversed: (S K E E G R O F S K E E G)Printing elements between Range 4-9: (S F O R G)Time complexity: O(1)Space complexity: O(1)
-
-Deleting a TupleTuples are immutable and hence they do not allow deletion of a part of it. The entire tuple gets deleted by the use of del() method. 
-
-Note- Printing of Tuple after deletion results in an Error. 
 
 
-            Python
 
-    # Deleting a Tuple
 
-Tuple1 = (0 1 2 3 4)
-del Tuple1
 
-print(Tuple1)
+
+// Implementation of Singleton Class 
+// in C++
+#include <bits/stdc++.h>
+using namespace std;
+ 
+class Singleton{
+  private:
+   
+  // member variables
+  string name loves; 
+     
+  static Singleton*
+         
+  // static pointer which will points 
+  //to the instance of this class
+  instancePtr; 
+   
+  // Default constructor
+  Singleton() 
+  {
+  }
+   
+  public:
+   
+  // deleting copy constructor
+  Singleton(const Singleton& obj)
+    = delete; 
+ 
+  /*
+    getInstance() is a static method that returns an
+    instance when it is invoked. It returns the same
+    instance if it is invoked more than once as an instance
+    of Singleton class is already created. It is static
+    because we have to invoke this method without any object
+    of Singleton class and static method can be invoked
+    without object of class
+ 
+    As constructor is private so we cannot create object of
+    Singleton class without a static method as they can be
+    called without objects. We have to create an instance of
+    this Singleton class by using getInstance() method.
+  */
+  static Singleton* getInstance()
+  {
+    // If there is no instance of class
+    // then we can create an instance.
+    if (instancePtr == NULL) 
+    {
+      // We can access private members 
+      // within the class.
+      instancePtr = new Singleton(); 
+       
+      // returning the instance pointer
+      return instancePtr; 
+    }
+    else
+    {
+      // if instancePtr != NULL that means 
+      // the class already have an instance. 
+      // So we are returning that instance 
+      // and not creating new one.
+      return instancePtr;
+    }
+  }
+ 
+  // sets values of member variables.
+  void setValues(string name 
+                 string loves) 
+  {
+    this->name = name;
+    this->loves = loves;
+  }
+   
+  // prints values of member variables
+  void print() 
+  {
+    cout << name << " Loves " << 
+            loves << "." << endl;
+  }
+};
+ 
+// initializing instancePtr with NULL
+Singleton* Singleton ::instancePtr = NULL; 
+ 
+// Driver code
+int main()
+{
+  Singleton* GeeksForGeeks 
+      = Singleton ::getInstance(); 
+   
+  // setting values of member variables.
+  GeeksForGeeks->setValues("Manish" 
+                           "GeeksForGeeks"); 
+   
+  // printing values of member variables.
+  GeeksForGeeks ->print(); 
+   
+  cout << "Address of GeeksForGeeks: " << 
+           GeeksForGeeks << endl;
+ 
+  cout << endl; 
+ 
+  Singleton* gfg = Singleton ::getInstance(); 
+   
+  // setting values of member variables.
+  gfg->setValues("Vartika"
+                 "GeeksForGeeks"); 
+   
+  // Printing values of member variables.
+  gfg->print(); 
+   
+  cout << "Address of gfg: " << gfg << endl;
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+                        
+
+
+
 
 Output
+Manish Loves GeeksForGeeks.
+Address of GeeksForGeeks: 0x1793010
 
-Traceback (most recent call last): File "/home/efa50fd0709dec08434191f32275928a.py" line 7 in print(Tuple1) NameError: name Tuple1 is not definedBuilt-In MethodsBuilt-in-MethodDescriptionindex( )Find in the tuple and returns the index of the given value where it’s availablecount( )Returns the frequency of occurrence of a specified valueBuilt-In FunctionsBuilt-in FunctionDescriptionall()Returns true if all element are true or if tuple is emptyany()return true if any element of the tuple is true. if tuple is empty return falselen()Returns length of the tuple or size of the tupleenumerate()Returns enumerate object of tuplemax()return maximum element of given tuplemin()return minimum element of given tuplesum()Sums up the numbers in the tuplesorted()input elements in the tuple and return a new sorted listtuple()Convert an iterable to a tuple.Tuples VS Lists:SimilaritiesDifferencesFunctions that can be used for both lists and tuples:
+Vartika Loves GeeksForGeeks.
+Address of gfg: 0x1793010
 
-len() max() min() sum() any() all() sorted()
+Explanation:
 
-Methods that cannot be used for tuples:
+Firstly we made all the constructor private so that an instance of the Singleton class can’t be instantiated from outside of it.
+We deleted copy constructor so that copy of the instance cannot be created.
+Created a static member instancePtr and initialized it with NULL. It points to the instance of Singleton class.
+Created a getInstance() method which returns an instance of the Singleton class. It is a static method because static variables are accessed by only static methods and we have to access instancePtr which is a static member.
+If there already exists an instance of the Singleton class then getInstance() will return a pointer to that instance as we can have only one instance of the Singleton class.
+If instancePtr == NULL that means there exists no instance of the Singleton class. So getInstance() will instantiate an instance of the Singleton class and return a pointer to it.
+We cannot create an instance of the Singleton class as all constructors are private. We have to use the getInstance() method to get an instance of it.
 
-append() insert() remove() pop() clear() sort() reverse()
+Case 1: An instance of the Singleton Class is created beforehand.
+In this implementation we are creating an instance of the Singleton class beforehand  (i.e. initializing instancePtr with an instance instead of NULL using a new keyword) and returning it when getInstance() is invoked.
+Below is the C++ program to implement the above approach:
 
-Methods that can be used for both lists and tuples:
+C++
 
-count() Index()
 
-we generally use ‘tuples’ for heterogeneous (different) data types and ‘lists’ for homogeneous (similar) data types.Tuples can be stored in lists.Iterating through a ‘tuple’ is faster than in a ‘list’.Lists can be stored in tuples.‘Lists’ are mutable whereas ‘tuples’ are immutable.Both ‘tuples’ and ‘lists’ can be nested.Tuples that contain immutable elements can be used as a key for a dictionary.Recent Articles on TupleTuples Programs
 
-Print unique rows in a given boolean StringsProgram to generate all possible valid IP addresses from given stringPython Dictionary to find mirror characters in a stringGenerate two output strings depending upon occurrence of character in input string in PythonPython groupby method to remove all consecutive duplicatesConvert a list of characters into a stringRemove empty tuples from a listReversing a TuplePython Set symmetric_difference()Convert a list of Tuples into DictionarySort a tuple by its float elementCount occurrences of an element in a TupleCount the elements in a list until an element is a TupleSort Tuples in Increasing Order by any keyNamedtuple in Python Useful Links:
 
-Output of Python ProgramsRecent Articles on Python TuplesMultiple Choice Questions – PythonAll articles in Python Category                                 
+
+
+
+                                    
+
+                                    
+                                    
+
+                                    
+
+                                    
+                                    
+                                    
+                                
+
+
+
+
+
+
+
+
+
+
+// C++ program to implement 
+// the above approach
+#include <bits/stdc++.h>
+using namespace std;
+ 
+class Singleton{
+  private:
+   
+  // member variables
+  string name loves;            
+   
+  // initializing instancePtr with an 
+  // instance(outside of this class we 
+  // are initializing instancePtr with 
+  // an object.)
+  static Singleton *instancePtr; 
+ 
+  // Default constructor
+  Singleton() 
+  {
+  }
+   
+  public:
+   
+  // deleting copy constructor.
+  Singleton(const Singleton &obj) = delete; 
+     
+  // returns instancePtr and instancePtr 
+  // is pointing to an instance of 
+  // Singleton class
+  static Singleton *getInstance()
+  {
+    return instancePtr;   
+  }
+ 
+  void setValues(string name 
+                 string loves)
+  {
+    this->name = name;
+    this->loves = loves;
+  }
+ 
+  void print()
+  {
+    cout << name << " Loves " << 
+            loves << "." << endl;
+  }
+};
+ 
+ 
+// initializing instancePtr with an instance
+Singleton *Singleton ::instancePtr 
+    = new Singleton(); 
+ 
+// Driver code
+int main()
+{
+  Singleton *gfg 
+     = Singleton::getInstance();
+  gfg->setValues("Learner" 
+                 "GeeksForGeeks");
+  gfg->print();
+  cout << "Address of gfg : " << 
+           gfg << endl;
+ 
+  // for output indentation
+  cout << endl; 
+       
+  Singleton *geeksForGeeks 
+     = Singleton::getInstance();
+  geeksForGeeks->setValues("Everyone" 
+                           "GeeksForGeeks");
+  geeksForGeeks->print();
+  cout << "Address of geeksForGeeks : " << 
+           geeksForGeeks << endl;
+ 
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+                        
+
+
+
+
+Output
+Learner Loves GeeksForGeeks.
+Address of gfg : 0xd63010
+
+Everyone Loves GeeksForGeeks.
+Address of geeksForGeeks : 0xd63010
+
+Explanation:
+
+Firstly we made all the constructor private so that an instance of the Singleton class can’t be instantiated from outside of it.
+We deleted copy constructor so that copy of the instance cannot be created.
+Created a static member instancePtr and initialized it with an instance using the new keyword. It is pointing to the instance of the Singleton class.
+Created a getInstance() method which returns instancePtr of the Singleton class. It is a static method because static variables are accessed by only static methods and we have to access instancePtr which is a static member.
+We cannot create an instance of the Singleton class as all constructors are private. We have to use the getInstance() method to get an instance of it.
+
+Case 2: When the instance is created without using the getInstance() method to create the Singleton Class.
+Below is the C++ program to implement the singleton class without using getinstance() method:
+
+C++
+
+
+
+
+
+
+
+                                    
+
+                                    
+                                    
+
+                                    
+
+                                    
+                                    
+                                    
+                                
+
+
+
+
+
+
+
+
+
+
+// C++ program to create singleton class 
+// without using getinstance() method 
+#include<bits/stdc++.h>
+using namespace std;
+ 
+class Singleton{
+  private:
+   
+  // member variables
+  string name loves; 
+   
+  // static pointer which points 
+  // to the instance of this class.
+  static Singleton *instancePtr; 
+ 
+  // Default constructor
+  Singleton() 
+  {
+ 
+  }
+     
+  //same as above
+  Singleton(string name 
+            string loves)
+  {
+    this->name = name;
+    this->loves = loves;
+  }
+   
+  public:
+   
+  // deleting copy constructor. 
+  Singleton(const Singleton &obj) = delete; 
+ 
+  static Singleton *getInstance()
+  {
+    // If there is no instance of class 
+    // then we can create an instance.
+    if(instancePtr == NULL) 
+    {
+      // We can access private members 
+      // within the class.
+      instancePtr = new Singleton();
+       
+      // returning the instance pointer. 
+      return instancePtr; 
+    }
+     
+    else
+    {   
+      // if instancePtr != NULL that means 
+      // the class already has an instance. 
+      // So we are returning that instance 
+      // and not creating new one.
+      return instancePtr;
+    }
+  }
+   
+  // sets values of member variables.
+  void setValues(string name 
+                 string loves) 
+  {
+    this->name = name;
+    this->loves = loves;
+  }
+   
+  // prints values of member variables.
+  void print() 
+  {
+    cout << name << " Loves " << 
+            loves << "." << endl;
+  }
+};
+ 
+// initializing instancePtr with NULL
+Singleton *Singleton ::instancePtr = NULL; 
+ 
+// Driver code
+int main()
+{    
+  // Gives error
+  Singleton *geeksForGeeks 
+     = new Singleton();
+       
+  // Cannot create object of Singleton class 
+  // as default constructor is private & 
+  // no method is used to access it.
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+                        
+
+
+
+
+Output
+ 
+Explanation: As shown in the above output we are not able to instantiate an instance of the Singleton class by using the constructor.  We can have only one instance of the Singleton class which we will get by using the getInstance() method.
+                                 
                             
                                 
                                     Like Article
@@ -290,14 +570,24 @@ Output of Python ProgramsRecent Articles on Python TuplesMultiple Choice Questio
                             
 
                             
-                                                             
+                                                            
+                                    
+                                        
+                                        Previous
+                                    
+                                    
+                                    
+                                        C++ 20 - std::span
+                                    
+                                
+                                                            
                                     
                                         Next
                                         
                                     
                                     
                                     
-                                        Tuples in Python
+                                        C++ sizeof Operator
                                     
                                 
                                                         
